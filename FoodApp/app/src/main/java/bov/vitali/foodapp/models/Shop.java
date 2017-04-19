@@ -13,16 +13,16 @@ import java.util.ArrayList;
 public class Shop {
 
     @ElementList(name = "categories", entry = "category")
-    private ArrayList<Category> categoryItems;
+    private ArrayList<Category> category;
 
     @ElementList(name = "offers", entry = "offer")
-    private ArrayList<Dish> dishItems;
+    private ArrayList<Offer> offer;
 
     public ArrayList<Category> getCategories() {
-        return categoryItems;
+        return category;
     }
 
-    public ArrayList<Dish> getDishes() {
-        return dishItems;
+    public ArrayList<Offer> getOffer() {
+        return offer;
     }
 }

@@ -1,5 +1,6 @@
 package bov.vitali.foodapp.models;
 
+import com.bignerdranch.expandablerecyclerview.model.Parent;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -9,6 +10,7 @@ import org.simpleframework.xml.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by vitali on 18.4.17.
@@ -16,7 +18,10 @@ import java.util.ArrayList;
 
 @Root(name = "category", strict = false)
 @DatabaseTable(tableName = "category")
-public class Category implements Serializable {
+public class Category implements Serializable, Parent {
+
+    public Category() {
+    }
 
     @Attribute(name = "id")
     @DatabaseField(columnName = "id", id = true)
@@ -28,10 +33,7 @@ public class Category implements Serializable {
 
     private int image;
 
-    private ArrayList<Dish> dishes = new ArrayList<>();
-
-    public Category() {
-    }
+    private ArrayList<Offer> offers = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -49,12 +51,12 @@ public class Category implements Serializable {
         this.title = title;
     }
 
-    public void setDishes(ArrayList<Dish> dishes) {
-        this.dishes = dishes;
+    public ArrayList<Offer> getOffers() {
+        return offers;
     }
 
-    public ArrayList<Dish> getDishes() {
-        return dishes;
+    public void setOffers(ArrayList<Offer> offers) {
+        this.offers = offers;
     }
 
     public int getImage() {
@@ -63,5 +65,15 @@ public class Category implements Serializable {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    @Override
+    public List<?> getChildList() {
+        return offers;
+    }
+
+    @Override
+    public boolean isInitiallyExpanded() {
+        return false;
     }
 }

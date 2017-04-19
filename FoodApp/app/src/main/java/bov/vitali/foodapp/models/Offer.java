@@ -15,38 +15,31 @@ import java.util.List;
  */
 
 @Root(name = "offer", strict = false)
-@DatabaseTable(tableName = "dish")
-public class Dish {
+@DatabaseTable(tableName = "offer")
+public class Offer {
+
+    public Offer() {
+    }
 
     @Attribute(name = "id")
     @DatabaseField(columnName = "id", id = true)
     private int id;
 
-    @Element(name = "categoryId")
-    @DatabaseField(columnName = "categoryId")
-    private int categoryId;
+    @Element(name = "url")
+    @DatabaseField(columnName = "url")
+    private String url;
 
     @Element(name = "name")
-    @DatabaseField(columnName = "title")
-    private String title;
-
-    @Element(name = "description", required = false)
-    @DatabaseField(columnName = "descr")
-    private String description;
-
-    @DatabaseField(columnName = "weight")
-    private String weight;
-
-    @ElementList(entry = "param", required = false, inline = true)
-    public List<DishParam> params;
+    @DatabaseField(columnName = "name")
+    private String name;
 
     @Element(name = "price")
     @DatabaseField(columnName = "price")
     private String price;
 
-    @Element(name = "url")
-    @DatabaseField(columnName = "url")
-    private String url;
+    @Element(name = "description", required = false)
+    @DatabaseField(columnName = "description")
+    private String description;
 
     @Element(name = "picture", required = false)
     @DatabaseField(columnName = "pictureUrl")
@@ -54,8 +47,15 @@ public class Dish {
 
     private byte[] picture;
 
-    public Dish() {
-    }
+    @Element(name = "categoryId")
+    @DatabaseField(columnName = "categoryId")
+    private int categoryId;
+
+    @ElementList(entry = "param", required = false, inline = true)
+    public List<OfferParam> params;
+
+    @DatabaseField(columnName = "weight")
+    private String weight;
 
     public int getId() {
         return id;
@@ -65,36 +65,12 @@ public class Dish {
         this.id = id;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public String getName() {
+        return name;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescr() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getWeight() {
-        return weight;
-    }
-
-    public void setWeight(String weight) {
-        this.weight = weight;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPrice() {
@@ -103,6 +79,14 @@ public class Dish {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getDescr() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getPictureUrl() {
@@ -121,11 +105,27 @@ public class Dish {
         this.picture = picture;
     }
 
-    public List<DishParam> getParams() {
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public List<OfferParam> getParams() {
         return params;
     }
 
-    public void setParams(List<DishParam> params) {
+    public void setParams(List<OfferParam> params) {
         this.params = params;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 }

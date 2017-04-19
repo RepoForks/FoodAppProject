@@ -12,17 +12,17 @@ import org.simpleframework.xml.Root;
 public class Catalog {
 
     @Attribute(name = "date")
-    private String refreshDate;
+    private String Date;
 
     @Element(name = "shop")
     private Shop shop;
 
-    public String getRefreshDate() {
-        return refreshDate;
+    public String getDate() {
+        return Date;
     }
 
-    public void setRefreshDate(String refreshDate) {
-        this.refreshDate = refreshDate;
+    public void setDate(String Date) {
+        this.Date = Date;
     }
 
     public Shop getShop() {

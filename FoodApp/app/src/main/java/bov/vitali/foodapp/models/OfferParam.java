@@ -9,13 +9,13 @@ import java.io.Serializable;
  * Created by vitali on 18.4.17.
  */
 
-public class DishParam implements Serializable {
+public class OfferParam implements Serializable {
 
     @Attribute(name = "name")
     public String name;
 
     @Text
-    public String paramValue;
+    public String param;
 
     public String getName() {
         return name;
@@ -25,11 +25,11 @@ public class DishParam implements Serializable {
         this.name = name;
     }
 
-    public String getParamValue() {
-        return paramValue;
+    public String getParam() {
+        return param;
     }
 
-    public void setParamValue(String paramValue) {
-        this.paramValue = paramValue;
+    public void setParam(String param) {
+        this.param = param;
     }
 }
