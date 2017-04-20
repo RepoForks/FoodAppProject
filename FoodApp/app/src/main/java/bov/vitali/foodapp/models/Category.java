@@ -18,7 +18,7 @@ import java.util.List;
 
 @Root(name = "category", strict = false)
 @DatabaseTable(tableName = "category")
-public class Category implements Serializable, Parent {
+public class Category implements Serializable, Parent<Offer> {
 
     public Category() {
     }
@@ -68,7 +68,7 @@ public class Category implements Serializable, Parent {
     }
 
     @Override
-    public List<?> getChildList() {
+    public List<Offer> getChildList() {
         return offers;
     }
 

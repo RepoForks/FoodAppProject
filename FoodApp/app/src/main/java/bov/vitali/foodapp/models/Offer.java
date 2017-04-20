@@ -8,6 +8,7 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ import java.util.List;
 
 @Root(name = "offer", strict = false)
 @DatabaseTable(tableName = "offer")
-public class Offer {
+public class Offer implements Serializable {
 
     public Offer() {
     }

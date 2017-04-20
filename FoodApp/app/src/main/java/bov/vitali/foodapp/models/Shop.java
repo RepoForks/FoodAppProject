@@ -3,6 +3,7 @@ package bov.vitali.foodapp.models;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -10,19 +11,19 @@ import java.util.ArrayList;
  */
 
 @Root(name = "shop")
-public class Shop {
+public class Shop implements Serializable {
 
     @ElementList(name = "categories", entry = "category")
-    private ArrayList<Category> category;
+    private ArrayList<Category> categories;
 
     @ElementList(name = "offers", entry = "offer")
-    private ArrayList<Offer> offer;
+    private ArrayList<Offer> offers;
 
     public ArrayList<Category> getCategories() {
-        return category;
+        return categories;
     }
 
-    public ArrayList<Offer> getOffer() {
-        return offer;
+    public ArrayList<Offer> getOffers() {
+        return offers;
     }
 }

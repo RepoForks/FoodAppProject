@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="bov.vitali.foodapp.MainActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="bov.vitali.foodapp.MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/dlMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </FrameLayout>
+
+        <ListView
+            android:id="@+id/lvMenuDrawer"
+            style="@style/Widget.AppCompat.ListView"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/navDrawerColor"
+            android:choiceMode="singleChoice"
+            android:dividerHeight="1dp"
+            android:listSelector="@color/colorPanelTitle"
+            android:paddingTop="10dp" />
+
+    </android.support.v4.widget.DrawerLayout>
 
 </RelativeLayout>

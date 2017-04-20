@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FoodApp</string>
+    <string name="call">Звоните</string>
+    <string name="close_menu">Закрыть</string>
+    <string name="descr">Описание</string>
+    <string name="error_downloading">Ошибка при загрузке данных. Повторите позже</string>
+    <string name="error_loading_map">Ошибка при загрузке карты</string>
+    <string name="error_save_db">Ошибка при сохранении в базу данных</string>
+    <string name="find">Мы здесь</string>
+    <string name="loading">Загрузка данных...</string>
+    <string name="no_descr">Описание отсутствует</string>
+    <string name="no_internet">Включите интернет</string>
+    <string name="open_menu">Открыть</string>
+    <string name="price">Цена</string>
+    <string name="wait">Пожалуйста, подождите</string>
+    <string name="weight">Вес</string>
+</resources>

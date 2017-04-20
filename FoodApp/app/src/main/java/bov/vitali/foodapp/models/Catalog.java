@@ -4,25 +4,27 @@ import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
+import java.io.Serializable;
+
 /**
  * Created by vitali on 18.4.17.
  */
 
 @Root(name = "yml_catalog")
-public class Catalog {
+public class Catalog implements Serializable {
 
     @Attribute(name = "date")
-    private String Date;
+    private String date;
 
     @Element(name = "shop")
     private Shop shop;
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
-    public void setDate(String Date) {
-        this.Date = Date;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public Shop getShop() {
